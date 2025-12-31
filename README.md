@@ -36,8 +36,9 @@ npm install
 
 ```
 DATABASE_URL=postgres://user:pass@your-neon-host:5432/yourdb
-PORT=3000
 ```
+You can get this from the Neon's dashboard. Create Neon account and create a project. From your project dashboard click connect and choose `.env` for NestJS, then copy the snippet. Make sure you remove the quote ' '.
+![Database url from neon](src/images/Neon-dashboard.png)
 
 Neon connection strings usually require SSL. This project sets `dialectOptions.ssl.require = true` and `rejectUnauthorized = false` in `src/database/database.module.ts`.
 
@@ -69,6 +70,7 @@ See `package.json` for the full list of scripts.
 - `DATABASE_URL` — Postgres connection string (required)
 
 Add any provider-specific variables for deployment (for example Koyeb service settings) to your deployment configuration.
+Choose the free one
 
 ## Project Structure
 
@@ -81,5 +83,20 @@ Add any provider-specific variables for deployment (for example Koyeb service se
 ## Deployment
 
 To deploy to Koyeb, containerize the app (Koyeb supports Docker images) and make sure the `DATABASE_URL` secret is configured in the Koyeb service. Alternatively, use Koyeb's Git integration and set environment variables via the Koyeb dashboard.
+
+## Create new web service 
+![Create new web service](src/images/Create-new-service-Koyeb-12-31-2025_03_58_PM.png)
+
+## Choose the CPU Eco option
+![Choose the CPU Eco option](src/images/koyeb.png)
+
+## Logs after successfull deployment
+![Logs](src/images/koyeb-logs.png)
+
+## Live URL
+![Live URL](src/images/live%20backend%20app%20url.png)
+
+## Test your app
+![Testing URL](src/images/Screenshot%202025-12-31%20160721.png)
 
 
